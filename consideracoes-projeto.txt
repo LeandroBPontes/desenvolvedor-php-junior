@@ -1,0 +1,17 @@
+Observações iniciais:
+
+- as tabelas estados e cidades foram importadas de projetos terceiros
+- projeto se encontra com problemas para alterar, pois, devido ao tempo, preferi dar foco as notas explicativas e à limpeza e comentários dos códigos.
+
+Observações pessoais:
+
+- Acrescentei um pouco de bootstrap para facilitar a estética do código, diminuindo a carga de front-end.
+- Como foi passada a orientação para resolver da forma que achava melhor, apesar de gostar de modelar o projeto antes de iniciar, não tive a possibilidade devido ao tempo, porém, busquei entregar a resolução atendendo aos problemas relativos à tarefa dada.
+
+Observações finais:
+
+- Apesar de não ser a primeira vez que programo esse tipo de cadastramento, alguns ponto somaram ao meu estudo, como a passagem em tempo de execução para os campos cidades.
+
+- Algumas operações com o banco foram importantes, pois é uma área na qual me identifico.
+
+- Autor: Leandro Barros Pontes.
