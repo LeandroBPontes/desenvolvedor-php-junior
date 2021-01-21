@@ -10,10 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
     <script type="text/javascript" src="jquery.js"></script>
-    <!--<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://code.jquery.com/jquery.js"></script>-->
    
-
     <!-- Estilo customizado -->
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
 
@@ -21,83 +18,57 @@
     
 
   </head>
-
   <body>
 
     <header><!--inicio cabeçalho -->
       <nav class="navbar navbar-expand-md navbar-light fixed-top navbar-transparente ">
         <div class="container">
-            <h4>Tela de Usuario </h4>
-        </div>
+            <h4>Tela de edição de cadastro </h4>
+                   
+          </div>
       </nav>
     </header><!--Fim cabeçalho -->
 
-    <div id="box_form"><br>
-        <h2 class="titulos ml-2 "> Usuarios cadastrados</h2>
+    <div id="box_form">
+        <h1 class="titulos ml-2"> Alteração</h1>
     </div>
 
-  
-    <?php
+    <h1> Entre com o id do usuario que deseja excluir. </h1>
 
-            include "connect.php";
-
-            //OBJETIVO: LISTAR USUARIOS JÁ CADASTRADOS
-
-            //acesso ao banco de dados
-            $query = mysqli_query($link, "SELECT nome, id FROM usuario ORDER BY id ASC");
-
-            //$stmt = mysqli_prepare($link, $query);
-            //mysqli_stmt_execute($stmt);
-
-            $fetchAll = mysqli_fetch_all($query, MYSQLI_ASSOC);
-            foreach($fetchAll as $usuario){
-
-            echo "   ".$usuario['nome']." - ".$usuario['id']." <br>  ";
-     
-            }
-
-
-            echo "Qual e o id do usuario que deseja consultar?";
-            ?>
-
-
-             <form action= "usuario_dados.php" method="POST" enctype="multipart/form-data" >
-             <select id="usuario" name="usuario" class="ml-2 mt-1">
+    <form method="POST" action="exclui_cliente_acao.php">
+    
+            <select id="id_usuario" name="id_usuario" class="ml-2 mt-1"> 
 
             <?php
-
-      
-            $query = mysqli_query($link, "SELECT  id FROM usuario ORDER BY id ASC");
+             include "connect.php";
+            
+            $query = mysqli_query($link, "SELECT id FROM usuario ORDER BY id ASC");
             
             $stmt = mysqli_prepare($link, $query);
             mysqli_stmt_execute($stmt);
 
             $fetchAll = mysqli_fetch_all($query, MYSQLI_ASSOC);
-
+        
 
             foreach($fetchAll as $usuario){
 
-            echo '<option "value = "usuario"> '.$usuario['id'].'</option>';
+            echo '<option "value = "id_usuario"> '.$usuario['id'].'</option>';
 
-            }    
-    ?>
+              
+                 }
+            ?>
+         </select>
 
-        </select>
-         <br><br>
-         
-        <input type="submit" value="Buscar" class="ml-2 mb-2 btn btn-primary">
-        <input type="reset" value="Limpar" class="btn btn-primary mb-2 ">
-       
-        </form>
-            <br>
+        <br><br>
+        <input type="submit" value="Excluir" class="ml-2 mb-2 btn btn-primary" >
+        <input type="reset" value="Limpar" class="btn btn-primary mb-2 "><br>
+        
+    </form>
 
-        <!-- LINK PARA INDEX DE CADASTRAMENTO -->
-        <?php
-    echo "Deseja cadastrar um novo usuario?<br>";
-    echo "<pre><a href='index.php'> Cadastrar </a>";
     
-        ?>
-    
+
+
+
     <!-- JavaScript (Opcional) -->
     <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
      

@@ -71,22 +71,12 @@
 }
 
     ?>
-     <form action= "usuario_acoes.php" method="POST" enctype="multipart/form-data" >
+     <form action= "usuario.php" method="POST" enctype="multipart/form-data" >
 
         <br>
-
-     <!-- CAMPOS PARA ALTERAÇÃO - UM DOS PROBLEMAS PROPOSTOS -->
-     <select name="escolha" id="escolha">
-
-        <!-- EDICAO COM PROBLEMAS -->
-        <option value="editar">Editar Usuario</option>
-        <option value="excluir">Excluir Usuario</option>
-     </select>
-
- <br><br>
   
-        <input type="submit" value="Executar" class="ml-2 mb-2 btn btn-primary">
-        <input type="reset" value="Limpar" class="btn btn-primary mb-2 ">
+        <input type="submit" value="Voltar" class="ml-2 mb-2 btn btn-primary">
+
 
 </form>
 

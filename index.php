@@ -139,9 +139,13 @@
         <input type="submit" value="Cadastrar" class="ml-2 mb-2 btn btn-primary">
         <input type="reset" value="Limpar" class="btn btn-primary mb-2 "><br>
 
-        <?php echo "Deseja Listar os Usuarios já cadastrados?";
-        echo "<a href='usuario.php'> Listar<br> </a>";
+             <br>
+        <?php 
+        echo "<pre><a href='usuario.php'> Listar </a> <a href='cliente.php'>| Alterar </a> <a href='exclui_cliente.php'>| Excluir </a>";
         ?>
+         <br>
+          <br>
+
 
  </form>
     
