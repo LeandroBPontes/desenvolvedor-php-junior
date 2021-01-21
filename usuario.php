@@ -86,7 +86,6 @@
          <br><br>
          
         <input type="submit" value="Buscar" class="ml-2 mb-2 btn btn-primary">
-        <input type="reset" value="Limpar" class="btn btn-primary mb-2 ">
        
         </form>
             <br>
@@ -94,7 +93,7 @@
         <!-- LINK PARA INDEX DE CADASTRAMENTO -->
         <?php
     echo "Deseja cadastrar um novo usuario?<br>";
-    echo "<pre><a href='index.php'> Cadastrar </a>";
+    echo "<pre><a href='cadastramento.php'> Cadastrar </a><a href='index.php'>| Sair </a>";
     
         ?>
     
