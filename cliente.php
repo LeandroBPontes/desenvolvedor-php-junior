@@ -1,4 +1,4 @@
-<!----------------------PÁGINA COM PROBLEMAS PARA FAZER ALTERAÇÃO NA TABELA ------------------>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -35,10 +35,9 @@
         <h1 class="titulos ml-2"> Alteração</h1>
     </div>
 
-    <h1> Qual campo você deseja alterar? </h1>
+    <h1> Entre com o campo e o id que deseja alterar. </h1>
 
-  
-    <form method="GET" action="#">
+    <form method="POST" action="altera_cliente.php">
 
         <select name="alter" id="altera" value="alter">
         <option value="nome">Nome</option>
@@ -53,62 +52,46 @@
         <option value="estado">Estado</option>
         <option value="cidade">Cidade</option>
         </select>
+    
+              <select id="id_usuario" name="id_usuario" class="ml-2 mt-1"> 
+
+            <?php
+             include "connect.php";
+            
+            $query = mysqli_query($link, "SELECT id FROM usuario ORDER BY id ASC");
+            
+            $stmt = mysqli_prepare($link, $query);
+            mysqli_stmt_execute($stmt);
+
+            $fetchAll = mysqli_fetch_all($query, MYSQLI_ASSOC);
         
+
+            foreach($fetchAll as $usuario){
+
+            echo '<option "value = "id_usuario"> '.$usuario['id'].'</option>';
+
+              
+                 }
+            ?>
+         </select>
+
+       <br><br> <input type="text" name="campo_alterado" placeholder="Digite o campo atualizado" style="width: 30%">
+
         <br><br>
-        <input type="submit" value="Alterar" class="ml-2 mb-2 btn btn-primary">
+        <input type="submit" value="Alterar" class="ml-2 mb-2 btn btn-primary" >
         <input type="reset" value="Limpar" class="btn btn-primary mb-2 "><br>
         
     </form>
- <?php
-
-        include "connect.php";
-        $variavel_alterada = @($_GET['alter']);
-        $id = $_POST['id_usuario'];
-       
-        echo $variavel_alterada;
-        echo $id;
-        //variavel_alterada == campo que o usuario quer editar
-        //variavel_troca == modificacao que ele quer fazer
 
 
-      /* if($variavel_alterada != ""){
-        echo "<script>var x = prompt('O que deseja inserir no lugar?')</script>";
-       $variavel_troca =  "<script>document.write(x)</script>";
         
-    }*/
 
- //   $query = mysqli_query($link, "UPDATE usuario SET $variavel_alterada = '$variavel_troca'  WHERE id = $id;");
-
-   /* echo "CAMPO ALTERADO COM SUCESSO";
-      $sql = mysqli_query($link, "SELECT * FROM usuario WHERE id = '$id' ");
-                //varredura banco
            
-
-            while($line = mysqli_fetch_array($sql)){
-                $id = $line['id'];
-                $nome = $line['nome'];
-                $cpf = $line['cpf'];
-                $data = $line['data'];
-                $email = $line['email'];
-                $telefone = $line['telefone'];
-                $cep = $line['cep'];
-                $logradouro = $line['logradouro'];
-                $numero = $line['numero'];
-                $complemento = $line['complemento'];
-                $bairro = $line['bairro'];
-                $estados = $line['estado'];
-                $cidades = $line['cidade'];
-
-                 echo "Nome: $nome , Id: $id, CPF: $cpf, Data Nasc.: $data, Email: $email,Telefone: $telefone, CEP:$cep, Logradouro: $logradouro, Numero: $numero, Complemento: $complemento, Bairro: $bairro, Estado: $estados, Cidade: $cidades <br>  ";
-
-    }*/
-                            
-                           
-           
-           
-    ?>
 
    
+
+    
+
 
 
     <!-- JavaScript (Opcional) -->

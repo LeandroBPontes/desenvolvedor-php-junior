@@ -32,8 +32,8 @@
       </nav>
     </header><!--Fim cabeçalho -->
 
-    <div id="box_form">
-        <h1 class="titulos ml-2"> Usuarios</h1>
+    <div id="box_form"><br>
+        <h2 class="titulos ml-2 "> Usuarios cadastrados</h2>
     </div>
 
   
@@ -52,7 +52,7 @@
             $fetchAll = mysqli_fetch_all($query, MYSQLI_ASSOC);
             foreach($fetchAll as $usuario){
 
-            echo "   ".$usuario['nome']." ".$usuario['id']." <br>  ";
+            echo "   ".$usuario['nome']." - ".$usuario['id']." <br>  ";
      
             }
 
@@ -93,14 +93,11 @@
 
         <!-- LINK PARA INDEX DE CADASTRAMENTO -->
         <?php
-    echo "Deseja cadastrar um novo usuario?<br>";
+    echo "Deseja alterar, excluir ou cadastrar um novo usuario?<br>";
     echo "<a href='index.php'> Cadastrar </a>";
+    echo "<a href='cliente.php'>|   Alterar/Excluir  </a>";
         ?>
     
-    
-   
-
-
     <!-- JavaScript (Opcional) -->
     <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
      

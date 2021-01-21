@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
     <script type="text/javascript" src="jquery.js"></script>
-    <!--<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://code.jquery.com/jquery.js"></script>-->
+    <!--<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>-->
+    <!--<script src="https://code.jquery.com/jquery.js"></script>-->
    
     <!-- Estilo customizado -->
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
@@ -85,14 +85,14 @@
            
             // CHAMADA AO BANCO, ORDENANDO OS ESTADOS PELO NOME           
             $query = mysqli_query($link, "SELECT * FROM estados ORDER BY nome ASC"); 
-
+            
             $stmt = mysqli_prepare($link, $query);
             mysqli_stmt_execute($stmt);
 
             $fetchAll = mysqli_fetch_all($query, MYSQLI_ASSOC);
 
             foreach($fetchAll as $estados){
-
+          
             echo '<option  name="'.$estados['nome'].'" value="'.$estados['id'].'">'.$estados['nome'].'</option>';
 
             }
@@ -151,9 +151,9 @@
       <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
      
    
-
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
-
+   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>

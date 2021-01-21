@@ -31,7 +31,8 @@
     </header><!--Fim cabeçalho -->
 
     <div id="box_form">
-        <h1 class="titulos ml-2"> Usuarios</h1>
+      <br><br>
+        <h3 class="titulos ml-2"> Dados do usuario - <?php echo $_POST['usuario']; ?></h3>
     </div>
 
 
@@ -64,7 +65,7 @@
                 $estados = $line['estado'];
                 $cidades = $line['cidade'];
 
-                 echo "Nome: $nome , Id: $id, CPF: $cpf, Data Nasc.: $data, Email: $email,Telefone: $telefone, CEP:$cep, Logradouro: $logradouro, Numero: $numero, Complemento: $complemento, Bairro: $bairro, Estado: $estados, Cidade: $cidades <br>  ";
+                 echo "Nome: $nome , CPF: $cpf, Data Nasc.: $data, Email: $email,Telefone: $telefone, CEP:$cep, Logradouro: $logradouro, Numero: $numero, Complemento: $complemento, Bairro: $bairro, Estado: $estados, Cidade: $cidades <br>  ";
 
     }
 }
@@ -72,7 +73,7 @@
     ?>
      <form action= "usuario_acoes.php" method="POST" enctype="multipart/form-data" >
 
-        <br><br>
+        <br>
 
      <!-- CAMPOS PARA ALTERAÇÃO - UM DOS PROBLEMAS PROPOSTOS -->
      <select name="escolha" id="escolha">
@@ -83,9 +84,7 @@
      </select>
 
  <br><br>
-  <select id="usuarios" name="usuarios" class="ml-2 mt-1">
-            <?php  echo '<option "value = "usuarios"> '.$id.'</option>'; ?>
-    </select>
+  
         <input type="submit" value="Executar" class="ml-2 mb-2 btn btn-primary">
         <input type="reset" value="Limpar" class="btn btn-primary mb-2 ">
 
